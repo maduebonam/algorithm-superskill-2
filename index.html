@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorithm 2</title>
+</head>
+
+<body>
+
+    <script>
+        //Implementation of Insertion Sort using JavaScript:
+
+        //Insertion sort is a simple sorting algorithm that works the way we sort playing cards in our hands. Each time we take a new card we put it in the right place in our hand.
+
+        //Instructions
+
+        //Each time work only with the first i-1 element from of the array
+        //Pick element arr[i] and insert it into sorted sequence in the array from 0 to i-1.
+
+        function insertionSort(arr) {
+            for (let i = 1; i < arr.length; i++) {
+                // Store the current element in a variable
+                let current = arr[i];
+
+                // Initialize a variable j to track the index of the sorted sequence
+                let j = i - 1;
+
+                // Shift elements of the sorted sequence to the right to create a position for the current element
+                while (j >= 0 && arr[j] > current) {
+                    arr[j + 1] = arr[j];
+                    j--;
+                }
+
+                // Insert the current element into its correct position
+                arr[j + 1] = current;
+            }
+        }
+
+        // Example usage
+        let array = [12, 11, 13, 5, 6];
+        console.log("Original array:", array);
+        insertionSort(array);
+        console.log("Sorted array:", array);
+
+    </script>
+
+</body>
+
+</html>
